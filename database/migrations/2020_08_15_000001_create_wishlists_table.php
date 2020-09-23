@@ -17,7 +17,7 @@ class CreateWishlistsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->unsigned();
             $table->unsignedBigInteger('wishlistable_id')->nullable();
-            $table->unsignedBigInteger('wishlistable_type')->nullable();
+            $table->string('wishlistable_type')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references(config('iyngaran.wishlist.user_table_primary_key'))
                 ->on(config('iyngaran.wishlist.user_table_name'))

@@ -33,8 +33,13 @@ class WishlistController
 
     public function store(WishlistRequest $request): JsonResponse
     {
+        $data = [
+            'wishlistable_id' => $request->wishlistable_id,
+            'user_id' => \Auth::user()->id,
+        ];
+
         return $this->createdResponse(
-            new Wishlist((new CreateWishlistAction())->execute($request))
+            new Wishlist((new CreateWishlistAction())->execute($data))
         );
     }
 

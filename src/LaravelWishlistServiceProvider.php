@@ -69,7 +69,7 @@ class LaravelWishlistServiceProvider extends ServiceProvider
         return  [
             'prefix' => "/",
             'middleware' => "web",
-            'namespace' => 'Iyngaran\LaravelUser\Http\Controllers'
+            'namespace' => 'Iyngaran\LaravelWishlist\Http\Controllers'
         ];
     }
 
@@ -77,8 +77,8 @@ class LaravelWishlistServiceProvider extends ServiceProvider
     {
         return  [
             'prefix' => 'api/',
-            'middleware' => "api",
-            'namespace' => 'Iyngaran\LaravelUser\Http\Controllers\Api'
+            'middleware' => "auth:sanctum",
+            'namespace' => 'Iyngaran\LaravelWishlist\Http\Controllers\Api'
 
         ];
     }
