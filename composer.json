@@ -1,0 +1,55 @@
+{
+    "name": "iyngaran/laravel-wishlist",
+    "description": "The laravel package to manage wishlist for ecommerce appliactions",
+    "keywords": [
+        "iyngaran",
+        "laravel-wishlist"
+    ],
+    "homepage": "https://github.com/iyngaran/laravel-wishlist",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Iyathurai Iyngaran",
+            "email": "dev@iyngaran.info",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "doctrine/dbal": "^2.10",
+        "iyngaran/api-response": "dev-develop"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Iyngaran\\LaravelWishlist\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Iyngaran\\LaravelWishlist\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Iyngaran\\LaravelWishlist\\LaravelWishlistServiceProvider"
+            ],
+            "aliases": {
+                "LaravelWishlist": "Iyngaran\\LaravelWishlist\\LaravelWishlistFacade"
+            }
+        }
+    }
+}
